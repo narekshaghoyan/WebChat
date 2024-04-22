@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', authRoutes)
 
 server.listen(3000, () => {
-  console.log("Server listens to port 3000");
+  console.log("Server listens to port http://localhost:3000");
 });
 
 

@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
+/* Define Custom CSS Variables */
 :root {
   --primary: #1c1c1c;
   --secondary: #34eaf0;
   --light: #c5c864;
+  --dark: #333; /* New color for darker elements */
 }
 
 * {
@@ -234,4 +236,10 @@ select {
   width: 100%;
   margin:auto;
   text-align:center;
+}
+
+
+#name-surname{
+  display: flex;
+  justify-content: space-between;
 }

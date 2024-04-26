@@ -49,6 +49,8 @@ function outputRoom(room) {
 function outputUsersList(users) {
   const usersList = document.getElementById('users');
 
+  console.log(users);
+
   usersList.innerHTML = `
   ${users.map((user) => `<li>${user.username}</li>`).join("")}`
 }

@@ -1,31 +1,29 @@
-
-const users = []
+const users = new Map(); // Change to Map
 
 const userJoin = (id, username, room) => {
   const user = { id, username, room };
-  users.push(user);
+  users.set(id, user); // Use set method for Map
 
   return user;
-}
+};
 
 const getCurrentUser = (id) => {
-  return users.find((user) => {
-    return user.id == id; // Add return statement here
-  });
+  return users.get(id); // Use get method for Map
 };
 
 const userLeave = (id) => {
-  const index = users.findIndex((user) => user.id === id);
-  if (index !== -1) return users.splice(index, 1)[0];
+  const user = users.get(id); // Retrieve user directly from Map
+  if (user) users.delete(id); // Use delete method for Map
+  return user;
 };
 
 const getRoomUsers = (room) => {
-  return users.filter((user) => user.room === room);
+  return Array.from(users.values()).filter((user) => user.room === room); // Convert Map values to array and then filter
 };
 
 module.exports = {
   userJoin,
   getCurrentUser,
   userLeave,
-  getRoomUsers
-}
+  getRoomUsers,
+};
